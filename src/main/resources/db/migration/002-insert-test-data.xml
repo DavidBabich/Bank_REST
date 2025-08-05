@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="002-insert-test-data" author="bankcards">
+
+        <insert tableName="users">
+            <column name="id" value="1"/>
+            <column name="username" value="admin"/>
+            <column name="password" value="$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lE9lBOsl7iKTVEFDa"/>
+        </insert>
+
+        <insert tableName="user_roles">
+            <column name="user_id" value="1"/>
+            <column name="role" value="ADMIN"/>
+        </insert>
+
+        <insert tableName="users">
+            <column name="id" value="2"/>
+            <column name="username" value="user"/>
+            <column name="password" value="$2a$10$8.UnVuG9HHgffUDAlk8qfOuVGkqRzgVymGe07xd00DMxs.AQubh4a"/>
+        </insert>
+
+        <insert tableName="user_roles">
+            <column name="user_id" value="2"/>
+            <column name="role" value="USER"/>
+        </insert>
+
+        <insert tableName="cards">
+            <column name="id" value="1"/>
+            <column name="encrypted_number" value="encrypted_1234567890123456"/>
+            <column name="owner_id" value="1"/>
+            <column name="expiry_date" value="2025-12-31"/>
+            <column name="status" value="ACTIVE"/>
+            <column name="balance" value="1000.00"/>
+        </insert>
+
+        <insert tableName="cards">
+            <column name="id" value="2"/>
+            <column name="encrypted_number" value="encrypted_9876543210987654"/>
+            <column name="owner_id" value="2"/>
+            <column name="expiry_date" value="2025-06-30"/>
+            <column name="status" value="ACTIVE"/>
+            <column name="balance" value="500.00"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog> 
